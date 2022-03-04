@@ -27,7 +27,7 @@ jobs:
       run: dotnet test ${{github.workspace}}/PackageClassLibrary/PackageClassLibrary/PackageClassLibrary.csproj --no-restore --verbosity normal
 
     - name: pack
-      run: dotnet pack ${{github.workspace}}/PackageClassLibrary/PackageClassLibrary/PackageClassLibrary.csproj  --output ./artifacts --configuration Release -p:Version=${{ 1 }}
+      run: dotnet pack ${{github.workspace}}/PackageClassLibrary/PackageClassLibrary/PackageClassLibrary.csproj  --output ./artifacts --configuration Release -p:Version=${{ 11 }}
     
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
