@@ -18,6 +18,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
+        
+    - name: Run GitVersion
+      uses: roryprimrose/rungitversion@v1.0.0
+
     - name: Install dependencies
       run: dotnet restore ${{github.workspace}}/PackageClassLibrary/PackageClassLibrary/PackageClassLibrary.csproj
     - name: Build
