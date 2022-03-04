@@ -18,9 +18,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-        
-    - name: Run GitVersion
-      uses: roryprimrose/rungitversion@v1.0.0
 
     - name: Install dependencies
       run: dotnet restore ${{github.workspace}}/PackageClassLibrary/PackageClassLibrary/PackageClassLibrary.csproj
@@ -30,7 +27,7 @@ jobs:
       run: dotnet test ${{github.workspace}}/PackageClassLibrary/PackageClassLibrary/PackageClassLibrary.csproj --no-restore --verbosity normal
 
     - name: pack
-      run: dotnet pack ${{github.workspace}}/PackageClassLibrary/PackageClassLibrary/PackageClassLibrary.csproj  --output ./artifacts --configuration Release -p:Version=${{ steps.gitversion.outputs.nuGetVersionV2 }}
+      run: dotnet pack ${{github.workspace}}/PackageClassLibrary/PackageClassLibrary/PackageClassLibrary.csproj  --output ./artifacts --configuration Release -p:Version=${{ 1 }}
     
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
